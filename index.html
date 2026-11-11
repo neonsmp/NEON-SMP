@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NeonSMP | Minecraft Java &amp; Bedrock Survival SMP</title>
+<meta name="description" content="NeonSMP is a survival SMP for Minecraft Java and Bedrock. Find the server address, live status, plugins, ranks and rules.">
+<meta name="theme-color" content="#060a1c">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060a1c;--card:#0d1538;--line:#1f2d6b;--tx:#e8eeff;--mut:#9aa9da;--cy:#22e8ff;--bl:#3b6bff;--pu:#8b5cf6;--mg:#ff3df2;--f1:'Silkscreen','Courier New',monospace;--f2:'Rajdhani',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--tx);font:500 1.1rem/1.6 var(--f2);overflow-x:hidden;
+background-image:radial-gradient(55rem 28rem at 12% -4%,#3b6bff38,transparent),radial-gradient(48rem 28rem at 100% 8%,#ff3df224,transparent),linear-gradient(#22e8ff0b 1px,transparent 1px),linear-gradient(90deg,#22e8ff0b 1px,transparent 1px);background-size:auto,auto,40px 40px,40px 40px}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+a{color:var(--cy)}
+.wrap{max-width:1080px;margin:0 auto}
+section{padding:4.5rem 1.25rem}
+h2{font:700 clamp(1.35rem,4.5vw,2rem)/1.2 var(--f1);margin-bottom:.6rem;color:var(--tx);text-shadow:0 0 18px #22e8ff66}
+h3{font:700 1.15rem/1.3 var(--f1);margin-bottom:.7rem;color:var(--cy)}
+.lead{color:var(--mut);max-width:62ch;margin-bottom:2rem}
+.note{color:var(--mut);font-size:1rem;margin-top:1.2rem;max-width:70ch}
+.g{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:linear-gradient(160deg,#111b47,var(--card));border:2px solid var(--line);border-radius:6px;padding:1.4rem}
+code{font:600 1rem 'Courier New',monospace;color:var(--tx);word-break:break-all}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:#060a1cdd;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 1.25rem}
+.brand{display:flex;align-items:center;gap:.6rem;font:700 1rem var(--f1);color:var(--tx);text-decoration:none}
+.brand img{height:34px;width:auto}
+.links{display:flex;gap:1.5rem;list-style:none;padding:0}
+.links a{color:var(--mut);text-decoration:none;font-weight:700}
+.links a:hover{color:var(--cy)}
+.burger{display:none;background:none;border:2px solid var(--line);color:var(--tx);border-radius:6px;padding:.3rem .7rem;font:700 1rem var(--f2);cursor:pointer}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.4rem;border-radius:6px;border:2px solid var(--cy);background:#22e8ff12;color:var(--tx);font:700 1.05rem var(--f2);cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 22px #22e8ff66;background:#22e8ff26}
+.btn.p{background:linear-gradient(135deg,var(--cy),var(--bl));color:#03102a;border-color:transparent;border-bottom:4px solid #0a3a99;box-shadow:0 0 26px #22e8ff55}
+.btn.dc{border-color:#5865f2;background:#5865f2}
+.btn.ig{border-color:var(--mg);background:linear-gradient(135deg,var(--pu),var(--mg))}
+.btn.sm{padding:.3rem .9rem;font-size:.95rem}
+
+/* hero */
+.hero{text-align:center;padding:4.5rem 1.25rem 4rem}
+.hero img{width:min(230px,58vw);height:auto;filter:drop-shadow(0 0 30px #22e8ffaa)}
+.hero h1{font:700 clamp(2.3rem,10vw,4.8rem)/1.05 var(--f1);letter-spacing:.04em;margin:1rem 0 .7rem;background:linear-gradient(90deg,var(--cy),var(--bl) 50%,var(--mg));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px #3b6bff77)}
+.hero p{color:var(--mut);font-size:1.3rem;max-width:34ch;margin:0 auto 1.8rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.6rem}
+.chip{border:1px solid var(--line);background:#0d153899;padding:.15rem .85rem;border-radius:99px;color:var(--mut);font-weight:700}
+.hero>*{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.hero>:nth-child(2){animation-delay:.12s}.hero>:nth-child(3){animation-delay:.24s}.hero>:nth-child(4){animation-delay:.36s}.hero>:nth-child(5){animation-delay:.48s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+
+/* connect */
+.row{display:flex;align-items:center;gap:.7rem;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.row span{color:var(--mut);min-width:4.6rem}
+.row code{flex:1}
+.card ol{padding-left:1.3rem;margin-top:1rem;color:var(--mut)}
+.card ol b{color:var(--tx)}
+
+/* status */
+.big{font:700 clamp(1.3rem,5vw,1.8rem) var(--f1);margin-bottom:1rem}
+.dot{width:16px;height:16px;border-radius:50%;background:#64729f;display:inline-block;margin-right:.7rem;vertical-align:middle}
+.dot.on{background:#2dff9a;box-shadow:0 0 12px #2dff9a;animation:pulse 1.6s infinite}
+.dot.off{background:#ff4d6d}.dot.wait{background:#ffc24d}.dot.err{background:#9aa9da}
+@keyframes pulse{50%{box-shadow:0 0 0 8px #2dff9a00}}
+.kv{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-bottom:1.2rem}
+.kv dt{color:var(--mut);font-size:1rem}
+.kv dd{font-weight:700;font-size:1.2rem;margin:0;overflow-wrap:anywhere}
+.foot{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.foot small{color:var(--mut)}
+
+/* features */
+.feat{border-left:4px solid var(--bl)}
+.feat:nth-child(3n+2){border-left-color:var(--pu)}.feat:nth-child(3n){border-left-color:var(--mg)}
+.feat p{color:var(--mut)}
+.plug{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:1.1rem}
+.plug div{border:1px solid var(--line);border-radius:6px;padding:.8rem 1rem;background:#0a1030}
+.plug b{color:var(--cy)}
+.plug span{display:block;color:var(--mut);font-size:1rem;line-height:1.4}
+
+/* ranks */
+.ranks{list-style:none;padding:0;display:grid;gap:.7rem;max-width:560px}
+.ranks li{display:flex;align-items:center;padding:1rem 1.2rem;border:2px solid var(--c);border-radius:6px;background:linear-gradient(90deg,var(--g),transparent);box-shadow:0 0 18px var(--g);font:700 1.05rem var(--f1);color:var(--c)}
+
+/* rules */
+.rules{list-style:none;padding:0;counter-reset:r;display:grid;gap:.8rem}
+.rules li{counter-increment:r;display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.2rem}
+.rules li:before{content:counter(r);flex:none;width:2.2rem;height:2.2rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--pu),var(--mg));border-radius:4px;font:700 1rem var(--f1);color:#fff}
+.rules b{color:var(--cy)}
+
+/* leaderboards */
+.lb{list-style:none;padding:0;counter-reset:l}
+.lb li{counter-increment:l;display:flex;gap:.7rem;padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--mut)}
+.lb li:before{content:counter(l);color:var(--mg);font:700 .95rem var(--f1);width:1.4rem}
+.lb li span{flex:1}.lb li b{color:var(--tx)}
+
+/* community + footer */
+.comm{text-align:center}
+.comm .lead{margin-left:auto;margin-right:auto}
+footer{border-top:1px solid var(--line);background:#040716;padding:2.5rem 1.25rem}
+.fg{display:grid;gap:1.8rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer p,footer li{color:var(--mut);font-size:1rem}
+footer ul{list-style:none;padding:0}
+footer h3{font-size:.9rem}
+.legal{margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--mut);font-size:.95rem}
+#toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,120%);background:var(--cy);color:#03102a;font-weight:700;padding:.6rem 1.2rem;border-radius:6px;transition:transform .25s;z-index:50;max-width:90vw;text-align:center}
+#toast.on{transform:translate(-50%,0)}
+
+@media(max-width:820px){
+.burger{display:block}
+.links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:1rem;background:#0a1030;padding:1.2rem 1.25rem;border-bottom:1px solid var(--line)}
+.links.open{display:flex}
+section{padding:3.5rem 1.1rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="#top"><img class="logo" alt="" width="34" height="34"><span>NEONSMP</span></a>
+<button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+<ul class="links" id="menu">
+<li><a href="#connect">Connect</a></li><li><a href="#status">Status</a></li><li><a href="#features">Features</a></li>
+<li><a href="#ranks">Ranks</a></li><li><a href="#rules">Rules</a></li><li><a href="#leaderboards">Leaderboards</a></li><li><a href="#community">Community</a></li>
+</ul>
+</div>
+</header>
+
+<main id="top">
+<div class="hero">
+<img class="logo" alt="NeonSMP logo" width="230" height="230">
+<h1>NEONSMP</h1>
+<p>A neon-lit survival world. Play together on Java &amp; Bedrock.</p>
+<div class="cta">
+<a class="btn p" href="#connect">Join Now</a>
+<a class="btn dc" href="https://discord.gg/gpADZM" target="_blank" rel="noopener">Join the Discord</a>
+</div>
+<div class="chips"><span class="chip">Survival SMP</span><span class="chip">Java + Bedrock</span><span class="chip">Paper</span></div>
+</div>
+
+<section id="connect"><div class="wrap">
+<h2>Connect to NeonSMP</h2>
+<p class="lead">Java and Bedrock players use the same address. Bedrock also needs the port.</p>
+<div class="g">
+<div class="card">
+<h3>Java Edition</h3>
+<div class="row"><span>Address</span><code>neonmc.aternos.me</code><button class="btn sm" data-copy="neonmc.aternos.me">Copy</button></div>
+<ol><li>Open <b>Minecraft: Java Edition</b> and choose <b>Multiplayer</b>.</li><li>Select <b>Add Server</b> (or <b>Direct Connection</b>).</li><li>Enter the address above.</li><li>Save the entry if you like, then select it to connect.</li></ol>
+</div>
+<div class="card">
+<h3>Bedrock Edition</h3>
+<div class="row"><span>Address</span><code>neonmc.aternos.me</code><button class="btn sm" data-copy="neonmc.aternos.me">Copy</button></div>
+<div class="row"><span>Port</span><code>19132</code><button class="btn sm" data-copy="19132">Copy</button></div>
+<ol><li>Open <b>Minecraft: Bedrock Edition</b> and go to <b>Play → Servers</b>.</li><li>Choose <b>Add Server</b> or <b>Add External Server</b>.</li><li>Enter <b>NeonSMP</b> as the server name.</li><li>Enter the address and port above, then save and connect.</li></ol>
+</div>
+</div>
+<p class="note">Having trouble joining? Check the Discord for current server availability and announcements.</p>
+</div></section>
+
+<section id="status"><div class="wrap">
+<h2>Live server status</h2>
+<p class="lead">Checked from your browser using a public Minecraft status API.</p>
+<div class="card" aria-live="polite">
+<div class="big"><span class="dot" id="dot"></span><span id="st">Checking…</span></div>
+<dl class="kv">
+<div><dt>Players online</dt><dd id="pl">—</dd></div>
+<div><dt>Version</dt><dd id="ver">—</dd></div>
+<div><dt>Server message</dt><dd id="motd">—</dd></div>
+</dl>
+<div class="foot"><button class="btn" id="refresh">Refresh status</button><small id="upd"></small></div>
+</div>
+<p class="note">Status comes from api.mcsrvstat.us, with api.mcstatus.io as a backup. NeonSMP is hosted on Aternos, so the server may be offline until it is started.</p>
+</div></section>
+
+<section id="features"><div class="wrap">
+<h2>Server features</h2>
+<p class="lead">What NeonSMP is built on.</p>
+<div class="g">
+<div class="card feat"><h3>Survival SMP</h3><p>A shared survival multiplayer experience.</p></div>
+<div class="card feat"><h3>Java &amp; Bedrock crossplay</h3><p>Play across supported Minecraft editions with Geyser and Floodgate.</p></div>
+<div class="card feat"><h3>Paper software</h3><p>The server runs on Paper.</p></div>
+<div class="card feat"><h3>Community Discord</h3><p>Meet the community and check for updates.</p></div>
+<div class="card feat"><h3>Teams and permissions</h3><p>Supported by the BetterTeams and LuckPerms plugins.</p></div>
+<div class="card feat"><h3>Tab list and leaderboards</h3><p>Supported by TAB, PlaceholderAPI, DecentHolograms and AJLeaderboards.</p></div>
+</div>
+<h3 style="margin-top:2.2rem">Installed plugins</h3>
+<div class="plug">
+<div><b>Geyser</b><span>Lets Bedrock Edition clients connect to Minecraft Java servers.</span></div>
+<div><b>Floodgate</b><span>Supports Bedrock player authentication on a Java server alongside Geyser.</span></div>
+<div><b>LuckPerms</b><span>Permission and group management.</span></div>
+<div><b>TAB</b><span>Customizable player tab list and related display features.</span></div>
+<div><b>PlaceholderAPI</b><span>Placeholder integration used by compatible plugins to display dynamic information.</span></div>
+<div><b>BetterTeams</b><span>Team creation and management features.</span></div>
+<div><b>DecentHolograms</b><span>In-game hologram creation and display.</span></div>
+<div><b>AJLeaderboards</b><span>In-game leaderboard displays.</span></div>
+</div>
+<p class="note">This list describes the server setup and installed plugin capabilities. It does not imply specific gameplay settings, events, rewards or uptime guarantees.</p>
+</div></section>
+
+<section id="ranks"><div class="wrap">
+<h2>Ranks</h2>
+<p class="lead">NeonSMP has five ranks, listed from highest to lowest.</p>
+<ul class="ranks">
+<li style="--c:#ff3df2;--g:#ff3df230">OWNER</li>
+<li style="--c:#a77bff;--g:#8b5cf630">OPERATOR</li>
+<li style="--c:#5f8cff;--g:#3b6bff30">MEDIA</li>
+<li style="--c:#22e8ff;--g:#22e8ff26">VIP</li>
+<li style="--c:#b4c2ee;--g:#b4c2ee1c">MEMBER</li>
+</ul>
+<p class="note">Rank perks are not listed here. Ask on the Discord for details. Groups are managed with LuckPerms.</p>
+</div></section>
+
+<section id="rules"><div class="wrap">
+<h2>Server rules</h2>
+<p class="lead">Discord announcements or in-game staff guidance may add details.</p>
+<ol class="rules">
+<li class="card"><div><b>Be respectful.</b> Treat players and staff courteously. Harassment, hate speech and targeted abuse are not welcome.</div></li>
+<li class="card"><div><b>Play fairly.</b> Do not use cheats, hacked clients or exploits to gain an unfair advantage.</div></li>
+<li class="card"><div><b>No griefing or stealing.</b> Respect other players' builds, belongings and claimed areas.</div></li>
+<li class="card"><div><b>Keep chat appropriate.</b> Avoid spam, disruptive behavior and inappropriate content.</div></li>
+<li class="card"><div><b>Do not advertise without permission.</b> This includes unsolicited links or promotion in chat.</div></li>
+<li class="card"><div><b>Follow staff directions.</b> If you disagree with a moderation decision, raise it calmly through the appropriate community channel.</div></li>
+</ol>
+</div></section>
+
+<section id="leaderboards"><div class="wrap">
+<h2>Leaderboards</h2>
+<p class="lead">Website leaderboards are not connected to the server yet. Rankings will appear here once real data is linked.</p>
+<div class="g">
+<div class="card"><h3>Top Kills</h3><ol class="lb" data-lb="kills"></ol></div>
+<div class="card"><h3>Top Blocks Broken</h3><ol class="lb" data-lb="blocks"></ol></div>
+<div class="card"><h3>Top Distance Travelled</h3><ol class="lb" data-lb="distance"></ol></div>
+</div>
+<p class="note" id="lbnote">The server has in-game leaderboards through AJLeaderboards, PlaceholderAPI and DecentHolograms.</p>
+</div></section>
+
+<section id="community" class="comm"><div class="wrap">
+<h2>Join the community</h2>
+<p class="lead">Meet other players, ask for help and read server announcements.</p>
+<div class="cta">
+<a class="btn dc" href="https://discord.gg/gpADZM" target="_blank" rel="noopener">Join the Discord</a>
+<a class="btn ig" id="ig" href="#community">Follow on Instagram</a>
+</div>
+</div></section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="fg">
+<div><a class="brand" href="#top"><img class="logo" alt="" width="34" height="34"><span>NEONSMP</span></a><p style="margin-top:.7rem">Minecraft Java &amp; Bedrock survival SMP.</p></div>
+<div><h3>Connect</h3><ul><li>Java: <code>neonmc.aternos.me</code></li><li>Bedrock: <code>neonmc.aternos.me</code></li><li>Bedrock port: <code>19132</code></li></ul></div>
+<div><h3>Links</h3><ul><li><a href="#status">Server status</a></li><li><a href="#rules">Rules</a></li><li><a href="https://discord.gg/gpADZM" target="_blank" rel="noopener">Discord</a></li></ul></div>
+</div>
+<p class="legal">Powered by Paper, Geyser, Floodgate, LuckPerms, TAB, PlaceholderAPI, BetterTeams, DecentHolograms and AJLeaderboards. Hosted on Aternos.<br>© <span id="yr"></span> NeonSMP. Not affiliated with Mojang or Microsoft. Minecraft is a trademark of Mojang Studios.</p>
+</div>
+</footer>
+
+<div id="toast" role="status"></div>
+
+<script>
+/* ===== Settings: edit these lines ===== */
+const CONFIG={
+  host:'neonmc.aternos.me',
+  instagram:'',          // paste your Instagram profile link here, e.g. 'https://instagram.com/yourname'
+  leaderboardsUrl:''     // optional JSON feed: {"kills":[{"name":"Steve","value":10}],"blocks":[...],"distance":[...]}
+};
+/* ====================================== */
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2400)};
+
+/* Logo: uses your own file (logo.png), tries other common extensions, hides itself if none exist */
+$$('.logo').forEach(i=>{const x=['png','jpg','webp','svg'];let n=0;i.onerror=()=>{++n<x.length?i.src='logo.'+x[n]:i.style.display='none'};i.src='logo.'+x[0]});
+
+/* Mobile menu */
+$('.burger').onclick=e=>{const o=$('.links').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o)};
+$$('.links a').forEach(a=>a.onclick=()=>$('.links').classList.remove('open'));
+
+/* Copy buttons */
+$$('[data-copy]').forEach(b=>b.onclick=async()=>{const v=b.dataset.copy;try{await navigator.clipboard.writeText(v)}catch(e){const t=document.createElement('textarea');t.value=v;document.body.append(t);t.select();document.execCommand('copy');t.remove()}toast('Copied '+v)});
+
+/* Instagram */
+const ig=$('#ig');
+if(CONFIG.instagram){ig.href=CONFIG.instagram;ig.target='_blank';ig.rel='noopener'}
+else ig.onclick=e=>{e.preventDefault();toast('Instagram link coming soon.')};
+
+/* Live status (real API data only) */
+const J=async u=>{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw Error(r.status);return r.json()};
+async function getStatus(){
+  try{const d=await J('https://api.mcsrvstat.us/3/'+CONFIG.host);
+    return{on:d.online,p:d.players,v:d.version,m:d.motd&&d.motd.clean&&d.motd.clean.join(' ')}}
+  catch(e){const d=await J('https://api.mcstatus.io/v2/status/java/'+CONFIG.host);
+    return{on:d.online,p:d.players,v:d.version&&d.version.name_clean,m:d.motd&&d.motd.clean&&d.motd.clean.replace(/\n/g,' ')}}
+}
+async function refresh(){
+  const dot=$('#dot'),st=$('#st'),set=(a,b,c)=>{$('#pl').textContent=a;$('#ver').textContent=b;$('#motd').textContent=c};
+  dot.className='dot';st.textContent='Checking…';
+  try{
+    const s=await getStatus(),txt=((s.v||'')+' '+(s.m||'')).toLowerCase();
+    let state='off',label='Offline';
+    if(s.on&&!/offline/.test(txt)){
+      if(/starting|loading|preparing|queue|saving/.test(txt)){state='wait';label='Starting up'}
+      else{state='on';label='Online'}
+    }
+    dot.className='dot '+state;st.textContent=label;
+    set(state==='on'&&s.p?s.p.online+' / '+s.p.max:'—',state==='on'&&s.v?s.v:'—',s.m&&s.m.trim()?s.m.trim():'—');
+  }catch(e){dot.className='dot err';st.textContent='Status unavailable';set('—','—','—')}
+  $('#upd').textContent='Last checked '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+}
+$('#refresh').onclick=refresh;refresh();setInterval(refresh,60000);
+
+/* Leaderboards: placeholders until a real feed is set in CONFIG.leaderboardsUrl */
+const KEYS=['kills','blocks','distance'];
+function fill(k,rows){
+  const ol=$('[data-lb="'+k+'"]');ol.innerHTML='';
+  for(let i=0;i<5;i++){const r=rows&&rows[i],li=document.createElement('li'),a=document.createElement('span'),b=document.createElement('b');
+    a.textContent=r?r.name:'No data yet';b.textContent=r?r.value:'—';li.append(a,b);ol.append(li)}
+}
+KEYS.forEach(k=>fill(k));
+if(CONFIG.leaderboardsUrl)J(CONFIG.leaderboardsUrl)
+  .then(d=>{KEYS.forEach(k=>fill(k,d[k]));$('#lbnote').textContent='Rankings loaded from the leaderboard feed.'})
+  .catch(()=>{$('#lbnote').textContent='Could not load leaderboard data right now.'});
+
+$('#yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
